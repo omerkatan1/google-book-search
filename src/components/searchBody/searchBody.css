@@ -1,0 +1,15 @@
+.headerWrap {
+    display: table;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(245, 245, 245, 0.678);
+    height: 15vh;
+    border-radius: 5px;
+}
+
+.headerTitle {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Bellota Text', cursive;
+    font-size: 45px;
+}
