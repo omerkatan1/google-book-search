@@ -1,9 +1,10 @@
 import React from 'react';
+import './bookCard.css';
 
 const BookCard = (props) => {
 
     return (
-        <div class="bookCard-container">
+        <div class="bookContainer">
             <img src={props.image} alt=""/>
             <div className="bookDesc">
                 <h2>{props.title}</h2>
