@@ -1,63 +1,17 @@
 import React from 'react';
-import axios from 'axios';
-
-import SearchResult from '../searchResult/searchResult';
-
-export default class SearchForm extends React.Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
-            result: {},
-            title: ''
-        }
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-
-        axios.get('https://www.googleapis.com/books/v1/volumes?q=' + this.state.title + '&key=AIzaSyDrZi7mLAWrEG2RqFVwW_PJUeAaqaG6x4M')
-        .then(function(res) {
+import './searchBar.css';
 
 
-            var allBooks = {};
+const SearchForm = (props) => {
+    return(
+        <div className="searchFormWrap">
+            <form onSubmit={props.searchBook} action="">
+                <input onChange={props.handleSearch} type="text" className="search"></input>
+                <button type="submit" className="btn">Search</button>
+            </form>
+        </div>
+    )
 
-            allBooks = res.data;
-
-            console.log(allBooks);
-
-
-
-
-        }).catch(err => console.log(err));
-    }
-
-    handleChange = (event) => {
-        event.preventDefault();
-        console.log(event.target.value);
-
-        this.setState({
-            [event.target.name ]: event.target.value
-        })
-    }
-
-
-    render() {
-        const { title } = this.state;
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="search for a book" name="title" onChange={this.handleChange} />
-                    <button>Search</button>
-
-                    <p>Title is {title}</p>
-                </form>
-
-
-                <SearchResult>
-                
-                </SearchResult>
-            </div>
-        )
-    }
 }
+
+export default SearchForm;
