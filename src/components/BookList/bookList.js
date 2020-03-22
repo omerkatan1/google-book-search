@@ -1,7 +1,7 @@
 import React from 'react';
 import BookCard from '../../components/bookCard/bookCard';
 
-const searchList = (props) => {
+const BookList = (props) => {
 
     return (
         <div className="list">
@@ -20,4 +20,4 @@ const searchList = (props) => {
 
 }
 
-export default searchList;
+export default BookList;
